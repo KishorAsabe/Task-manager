@@ -22,7 +22,9 @@ function App() {
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
       <BrowserRouter>
         <Routes>
+        <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
+
           <Route
             path="/signup"
             element={authState.isLoggedIn ? <Navigate to="/" /> : <Signup />}
