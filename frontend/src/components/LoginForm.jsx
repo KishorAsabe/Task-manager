@@ -57,32 +57,65 @@ const LoginForm = ({ redirectUrl }) => {
 
   return (
     <>
-      <form className='m-auto my-16 max-w-[500px] bg-white p-8 border-2 shadow-md rounded-md'>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <h2 className='text-center mb-4'>Welcome user, please login here</h2>
-            <div className="mb-4">
-              <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500">Email</label>
-              <Input type="text" name="email" id="email" value={formData.email} placeholder="youremail@domain.com" onChange={handleChange} />
-              {fieldError("email")}
-            </div>
+<>
+<>
 
-            <div className="mb-4">
-              <label htmlFor="password" className="after:content-['*'] after:ml-0.5 after:text-red-500">Password</label>
-              <Input type="password" name="password" id="password" value={formData.password} placeholder="Your password.." onChange={handleChange} />
-              {fieldError("password")}
-            </div>
+  <form className='m-auto my-16 max-w-[500px] bg-richblack-800 p-8 border-2 shadow-md rounded-md'>
+  {loading ? (
+    <Loader />
+  ) : (
+    <>
+      <h2 className='text-center mb-4 text-richblack-5'>Welcome user, please login here</h2>
+      <div className="mb-4">
+        <label htmlFor="email" className="text-richblack-5 block mb-1 after:content-['*'] after:ml-0.5 after:text-red-500">Email</label>
+        <Input
+          type="text"
+          name="email"
+          id="email"
+          value={formData.email}
+          placeholder="Enter your email"
+          onChange={handleChange}
+          className="w-full rounded-md bg-richblack-700 p-[12px] text-richblack-5"
+        />
+        {fieldError("email")}
+      </div>
 
-            <button className='bg-primary text-white px-4 py-2 font-medium hover:bg-primary-dark' onClick={handleSubmit}>Submit</button>
+      <div className="mb-4">
+        <label htmlFor="password" className="text-richblack-5 block mb-1 after:content-['*'] after:ml-0.5 after:text-red-500">Password</label>
+        <Input
+          type="password"
+          name="password"
+          id="password"
+          value={formData.password}
+          placeholder="Enter your password"
+          onChange={handleChange}
+          className="w-full rounded-md bg-richblack-700 p-[12px] pr-12 text-richblack-5"
+        />
+        {fieldError("password")}
+      </div>
 
-            <div className='pt-4'>
-              <Link to="/signup" className='text-blue-400'>Don't have an account? Signup here</Link>
-            </div>
-          </>
-        )}
-      </form>
+      <button
+        className='bg-yellow-50 text-richblack-900 px-4 py-2 font-medium hover:bg-yellow-100 rounded-md'
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+
+      <div className='pt-4'>
+        <Link to="/signup" className='text-blue-100'>
+          Don't have an account? Signup here
+        </Link>
+      </div>
+    </>
+  )}
+</form>
+
+
+
+</>
+
+</>
+
     </>
   )
 }
