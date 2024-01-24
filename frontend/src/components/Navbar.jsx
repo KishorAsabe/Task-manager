@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { logout } from "../redux/actions/authActions";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/task.jpg";
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
+  const navigate = useNavigate();
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -16,6 +18,12 @@ const Navbar = () => {
   const handleLogoutClick = () => {
     dispatch(logout());
   };
+
+  const handleLogin = () => {
+    // Use the `navigate` function to programmatically navigate to the login route
+    navigate("/login");
+  };
+  
 
   return (
     <>
@@ -44,18 +52,18 @@ const Navbar = () => {
               </li>
 
               <li
-                className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-900 transition-all"
+                className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-900 transition-all hover:cursor-pointer"
                 onClick={handleLogoutClick}
               >
                 Logout
               </li>
             </>
           ) : (
-            <Link to="/login">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-900 transition-all">
-                Log in
+            
+              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 hover:bg-richblack-900 transition-all hover:cursor-pointer" onClick={handleLogin}>
+              <Link to="/login">Log In</Link>
               </button>
-            </Link>
+            
           )}
         </ul>
 
@@ -103,7 +111,8 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
-              <li className="py-2 px-[12px] cursor-pointer text-richblack-900 hover:bg-richblack-200 transition rounded-sm">
+              <li className="py-2 px-[12px] cursor-pointer text-richblack-900 hover:bg-richblack-200 transition rounded-sm"
+              onClick={handleLogin}>
                 <Link to="/login">Login</Link>
               </li>
             )}
