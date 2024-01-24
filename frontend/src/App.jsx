@@ -9,8 +9,7 @@ import { saveProfile } from "./redux/actions/authActions";
 import NotFound from "./pages/NotFound";
 
 function App() {
-
-  const authState = useSelector(state => state.authReducer);
+  const authState = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,20 +18,43 @@ function App() {
     dispatch(saveProfile(token));
   }, [authState.isLoggedIn, dispatch]);
 
-
   return (
-    <>
+    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={authState.isLoggedIn ? <Navigate to="/" /> : <Signup />} />
+          <Route
+            path="/signup"
+            element={authState.isLoggedIn ? <Navigate to="/" /> : <Signup />}
+          />
           <Route path="/login" element={<Login />} />
-          <Route path="/tasks/add" element={authState.isLoggedIn ? <Task /> : <Navigate to="/login" state={{ redirectUrl: "/tasks/add" }} />} />
-          <Route path="/tasks/:taskId" element={authState.isLoggedIn ? <Task /> : <Navigate to="/login" state={{ redirectUrl: window.location.pathname }} />} />
+          <Route
+            path="/tasks/add"
+            element={
+              authState.isLoggedIn ? (
+                <Task />
+              ) : (
+                <Navigate to="/login" state={{ redirectUrl: "/tasks/add" }} />
+              )
+            }
+          />
+          <Route
+            path="/tasks/:taskId"
+            element={
+              authState.isLoggedIn ? (
+                <Task />
+              ) : (
+                <Navigate
+                  to="/login"
+                  state={{ redirectUrl: window.location.pathname }}
+                />
+              )
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
