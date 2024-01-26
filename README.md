@@ -322,5 +322,5 @@ Inside backend folder:
 Contact
 For any inquiries, please contact:
 
-Your Name : Kishor Asabe
-Your Email :kishorasabe2020@gmail.com
+- Name : Kishor Asabe
+- Email :kishorasabe2020@gmail.com
