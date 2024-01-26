@@ -13,7 +13,7 @@ A MERN application for basic tasks management.
 - [Backend API](#backend-api)
 - [Frontend Pages](#frontend-pages)
 - [npm scripts](#npm-scripts)
-- [Useful Links](#useful-links)
+- [Video Demo](#video-demo)
 - [Contact](#contact)
 
 ## Features
@@ -157,6 +157,13 @@ Inside backend folder:
 
 - `npm run dev`: Starts backend using nodemon.
 - `npm start`: Starts backend without nodemon. -->
+## Video Demo
+
+[![Watch the Video Demo](![homepage](task.jpg))](https://drive.google.com/file/d/1VMv-q1MnA1505FK3NcdT3OB46buDTA5p/view?usp=drive_link)
+
+
+Click on the image above to watch a video demonstration of the MERN Task Manager in action.
+
 
 Contact
 For any inquiries, please contact:
