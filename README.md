@@ -159,7 +159,7 @@ Inside backend folder:
 - `npm start`: Starts backend without nodemon. -->
 ## Video Demo
 
-[![Watch the Video Demo](![vido]](https://drive.google.com/file/d/1VMv-q1MnA1505FK3NcdT3OB46buDTA5p/view?usp=drive_link)
+[![Watch the Video Demo](https://drive.google.com/file/d/1VMv-q1MnA1505FK3NcdT3OB46buDTA5p/view?usp=drive_link)]
 
 
 Click on the image above to watch a video demonstration of the MERN Task Manager in action.
